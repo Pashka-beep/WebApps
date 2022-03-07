@@ -7,7 +7,7 @@
         <p>
             {{ form.title.label }}<br>
             {{ form.title(class="form-control") }}<br>
-            {% for error in form.email.errors %}
+            {% for error in form.title.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
@@ -16,7 +16,7 @@
         <p>
             {{ form.team_lead.label }}<br>
             {{ form.team_lead(class="form-control") }}<br>
-            {% for error in form.email.errors %}
+            {% for error in form.team_lead.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
@@ -25,7 +25,7 @@
         <p>
             {{ form.work_size.label }}<br>
             {{ form.work_size(class="form-control") }}<br>
-            {% for error in form.email.errors %}
+            {% for error in form.work_size.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
@@ -34,7 +34,7 @@
         <p>
             {{ form.collab.label }}<br>
             {{ form.collab(class="form-control") }}<br>
-            {% for error in form.email.errors %}
+            {% for error in form.collab.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
