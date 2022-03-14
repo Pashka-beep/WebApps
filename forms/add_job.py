@@ -4,9 +4,9 @@ from wtforms.validators import DataRequired
 
 
 class AddJob(FlaskForm):
-    title = StringField("JobTitle", validators=[DataRequired()])
-    team_lead = IntegerField("Team Leader id", validators=[DataRequired()])
-    work_size = StringField("Work Size", validators=[DataRequired()])
-    collab = StringField("Collaborators", validators=[DataRequired()])
-    is_finished = BooleanField('Is job finished?')
-    submit = SubmitField('Add job')
+    title = StringField("Название работы", validators=[DataRequired()])
+    team_lead = IntegerField("Id Тимлидера", validators=[DataRequired()])
+    work_size = StringField("Размер работы", validators=[DataRequired()])
+    collab = StringField("Коллабораторы", validators=[DataRequired()])
+    is_finished = BooleanField('Закончена работа?')
+    submit = SubmitField('Добавить работу')

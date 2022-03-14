@@ -6,6 +6,7 @@ from data.users import User
 from data.jobs import Jobs
 from forms.login import LoginForm
 from forms.register import RegisterForm
+from forms.add_job import AddJob
 
 app = Flask(__name__)
 login_manager = LoginManager()
@@ -80,6 +81,27 @@ def register():
         session.commit()
         return redirect('/login')
     return render_template('register.html', title='Регистрация', form=form)
+
+
+@app.route('/addjob', methods=['GET', 'POST'])
+def addjob():
+    add_form = AddJob()
+    if add_form.validate_on_submit():
+        session = db_session.create_session()
+        if not session.query(User).filter(User.id == add_form.team_lead.data).first():
+            return render_template('add_job.html', title='Добавление работы', form=add_form,
+                                   message='Тимлид не найден')
+        jobs = Jobs(
+            job=add_form.title.data,
+            team_leader=add_form.team_lead.data,
+            work_size=add_form.work_size.data,
+            collaborators=add_form.collab.data,
+            is_finished=add_form.is_finished.data
+        )
+        session.add(jobs)
+        session.commit()
+        return redirect('/')
+    return render_template('add_job.html', title='Adding a job', form=add_form)
 
 
 if __name__ == '__main__':

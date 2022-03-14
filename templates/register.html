@@ -25,7 +25,7 @@
         <p>
             {{ form.password_again.label }}<br>
             {{ form.password_again(class="form-control", type="password") }}<br>
-            {% for error in form.password.errors %}
+            {% for error in form.password_again.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
@@ -34,7 +34,7 @@
         <p>
             {{ form.surname.label }}<br>
             {{ form.surname(class="form-control") }}<br>
-            {% for error in form.password.errors %}
+            {% for error in form.surname.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
@@ -43,7 +43,7 @@
         <p>
             {{ form.name.label }}<br>
             {{ form.name(class="form-control") }}<br>
-            {% for error in form.password.errors %}
+            {% for error in form.name.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
@@ -52,7 +52,7 @@
         <p>
             {{ form.age.label }}<br>
             {{ form.age(class="form-control") }}<br>
-            {% for error in form.password.errors %}
+            {% for error in form.age.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
@@ -61,7 +61,7 @@
         <p>
             {{ form.position.label }}<br>
             {{ form.position(class="form-control") }}<br>
-            {% for error in form.password.errors %}
+            {% for error in form.position.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
@@ -70,7 +70,7 @@
         <p>
             {{ form.speciality.label }}<br>
             {{ form.speciality(class="form-control") }}<br>
-            {% for error in form.password.errors %}
+            {% for error in form.speciality.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
@@ -79,7 +79,7 @@
         <p>
             {{ form.address.label }}<br>
             {{ form.address(class="form-control") }}<br>
-            {% for error in form.password.errors %}
+            {% for error in form.address.errors %}
                 <div class="alert alert-danger" role="alert">
                     {{ error }}
                 </div>
